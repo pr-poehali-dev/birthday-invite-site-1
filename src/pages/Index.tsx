@@ -63,7 +63,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <audio ref={audioRef} loop>
-        <source src="https://cdn.pixabay.com/audio/2022/03/10/audio_13cc09c03f.mp3" type="audio/mpeg" />
+        <source src="https://cdn.pixabay.com/audio/2022/03/20/audio_5c9e6ec9a5.mp3" type="audio/mpeg" />
       </audio>
       
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
