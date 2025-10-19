@@ -104,7 +104,7 @@ const Index = () => {
               2 ноября • 14:00
             </p>
             
-            <div className="grid grid-cols-4 gap-4 max-w-xl mx-auto">
+            <div className="grid grid-cols-4 gap-4 max-w-xl mx-auto mb-8">
               <div className="bg-card rounded-lg p-4 shadow-md">
                 <div className="text-3xl md:text-4xl font-bold text-primary">{timeLeft.days}</div>
                 <div className="text-sm text-muted-foreground mt-1">дней</div>
@@ -122,6 +122,14 @@ const Index = () => {
                 <div className="text-sm text-muted-foreground mt-1">секунд</div>
               </div>
             </div>
+
+            <Button 
+              className="gap-2 text-lg px-8 py-6"
+              onClick={() => window.open('https://t.me/+P6PIH4YYiqM2ZDY6', '_blank')}
+            >
+              <Icon name="Send" size={20} />
+              Перейти в Telegram-чат
+            </Button>
           </div>
         </div>
       </section>
