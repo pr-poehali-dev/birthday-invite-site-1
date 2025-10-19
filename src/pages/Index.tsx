@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -13,6 +13,33 @@ const Index = () => {
     message: ''
   });
 
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const targetDate = new Date('2025-12-31T14:00:00').getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000)
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success('Спасибо! Ваше подтверждение принято');
@@ -24,7 +51,9 @@ const Index = () => {
       <section className="min-h-screen flex items-center justify-center px-4 py-16">
         <div className="max-w-4xl w-full text-center animate-fade-in">
           <div className="mb-8">
-            <div className="text-6xl mb-6">🎉</div>
+            <div className="text-6xl mb-6">
+              <span className="text-primary">❤️</span>
+            </div>
             <h1 className="text-6xl md:text-8xl font-light mb-6 text-primary">
               День рождения Елизаветы
             </h1>
@@ -32,9 +61,28 @@ const Index = () => {
               Празднуем 19 лет!
             </p>
             <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
-            <p className="text-lg text-foreground">
+            <p className="text-lg text-foreground mb-8">
               Дата уточняется • 14:00
             </p>
+            
+            <div className="grid grid-cols-4 gap-4 max-w-xl mx-auto">
+              <div className="bg-card rounded-lg p-4 shadow-md">
+                <div className="text-3xl md:text-4xl font-bold text-primary">{timeLeft.days}</div>
+                <div className="text-sm text-muted-foreground mt-1">дней</div>
+              </div>
+              <div className="bg-card rounded-lg p-4 shadow-md">
+                <div className="text-3xl md:text-4xl font-bold text-primary">{timeLeft.hours}</div>
+                <div className="text-sm text-muted-foreground mt-1">часов</div>
+              </div>
+              <div className="bg-card rounded-lg p-4 shadow-md">
+                <div className="text-3xl md:text-4xl font-bold text-primary">{timeLeft.minutes}</div>
+                <div className="text-sm text-muted-foreground mt-1">минут</div>
+              </div>
+              <div className="bg-card rounded-lg p-4 shadow-md">
+                <div className="text-3xl md:text-4xl font-bold text-primary">{timeLeft.seconds}</div>
+                <div className="text-sm text-muted-foreground mt-1">секунд</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -81,37 +129,24 @@ const Index = () => {
             Место проведения
           </h2>
           
-          <Card className="border-none shadow-lg overflow-hidden">
-            <CardContent className="p-0">
-              <div className="relative h-[300px] md:h-[400px] bg-muted">
-                <iframe
-                  src="https://yandex.ru/map-widget/v1/?ll=39.902222%2C54.696667&z=15&l=map&pt=39.902222,54.696667,pm2rdm"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  allowFullScreen
-                  className="absolute inset-0"
-                  title="Карта санатория Солотча"
-                />
+          <Card className="border-none shadow-lg">
+            <CardContent className="p-12">
+              <div className="mb-6">
+                <Icon name="MapPin" size={48} className="mx-auto text-primary mb-4" />
               </div>
-              <div className="p-8 md:p-12">
-                <div className="mb-6">
-                  <Icon name="MapPin" size={48} className="mx-auto text-primary mb-4" />
-                </div>
-                <h3 className="text-3xl font-medium mb-4">Санаторий Солотча</h3>
-                <p className="text-lg text-muted-foreground mb-6">
-                  Корпус 9<br />
-                  Солотча, Рязанская область
-                </p>
-                <Button 
-                  variant="outline" 
-                  className="gap-2"
-                  onClick={() => window.open('https://yandex.ru/maps/?ll=39.902222%2C54.696667&z=15&l=map&pt=39.902222,54.696667,pm2rdm', '_blank')}
-                >
-                  <Icon name="Navigation" size={18} />
-                  Открыть на карте
-                </Button>
-              </div>
+              <h3 className="text-3xl font-medium mb-4">Санаторий Солотча</h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                Корпус 9<br />
+                Солотча, Рязанская область
+              </p>
+              <Button 
+                variant="outline" 
+                className="gap-2"
+                onClick={() => window.open('https://yandex.ru/maps/?ll=39.902222%2C54.696667&z=15&l=map&pt=39.902222,54.696667,pm2rdm', '_blank')}
+              >
+                <Icon name="Navigation" size={18} />
+                Открыть на карте
+              </Button>
             </CardContent>
           </Card>
         </div>
