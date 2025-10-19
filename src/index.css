@@ -113,15 +113,19 @@
 
   .sparkle {
     position: absolute;
-    width: 6px;
-    height: 6px;
-    background: radial-gradient(circle, #fff 0%, #ffd700 50%, transparent 80%);
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 250, 250, 0.8) 0%,
+      rgba(139, 0, 0, 0.3) 60%,
+      transparent 100%
+    );
     border-radius: 50%;
     box-shadow:
-      0 0 10px 3px rgba(255, 255, 255, 1),
-      0 0 20px 6px rgba(255, 215, 0, 0.8),
-      0 0 30px 8px rgba(139, 0, 0, 0.6);
-    animation: sparkleFloat 3s ease-in-out infinite;
+      0 0 4px 1px rgba(255, 250, 250, 0.4),
+      0 0 8px 2px rgba(139, 0, 0, 0.2);
+    animation: sparkleFloat 4s ease-in-out infinite;
     opacity: 0;
   }
 
@@ -131,10 +135,10 @@
       opacity: 0;
     }
     10% {
-      opacity: 1;
+      opacity: 0.5;
     }
     90% {
-      opacity: 1;
+      opacity: 0.5;
     }
     100% {
       transform: translateY(-100px) scale(1);

@@ -63,7 +63,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
       <audio ref={audioRef} loop>
-        <source src="https://cdn.pixabay.com/audio/2022/03/20/audio_5c9e6ec9a5.mp3" type="audio/mpeg" />
+        <source src="https://cdn.pixabay.com/audio/2022/03/24/audio_c20a09ae17.mp3" type="audio/mpeg" />
       </audio>
       
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
@@ -90,12 +90,17 @@ const Index = () => {
       <section className="min-h-screen flex items-center justify-center px-4 py-16">
         <div className="max-w-4xl w-full text-center animate-fade-in">
           <div className="mb-8">
-            <div className="text-6xl mb-6">
+            <div className="text-6xl mb-6 flex justify-center gap-4">
+              <span>🖤</span>
               <span className="text-primary">❤️</span>
+              <span>🖤</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-light mb-6 text-primary">
-              День рождения Елизаветы
+              HAPPY BIRTHDAY
             </h1>
+            <p className="text-4xl md:text-5xl font-light mb-6 text-foreground">
+              Елизавета
+            </p>
             <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8">
               Празднуем 19 лет!
             </p>
