@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -20,8 +20,11 @@ const Index = () => {
     seconds: 0
   });
 
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
   useEffect(() => {
-    const targetDate = new Date('2025-12-31T14:00:00').getTime();
+    const targetDate = new Date('2025-11-02T14:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -40,6 +43,17 @@ const Index = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success('Спасибо! Ваше подтверждение принято');
@@ -48,6 +62,17 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <audio ref={audioRef} loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg" />
+      </audio>
+      
+      <Button
+        onClick={toggleMusic}
+        className="fixed bottom-8 right-8 z-50 rounded-full w-16 h-16 shadow-lg"
+        size="icon"
+      >
+        <Icon name={isPlaying ? 'Volume2' : 'VolumeX'} size={24} />
+      </Button>
       <section className="min-h-screen flex items-center justify-center px-4 py-16">
         <div className="max-w-4xl w-full text-center animate-fade-in">
           <div className="mb-8">
