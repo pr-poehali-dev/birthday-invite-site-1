@@ -113,13 +113,14 @@
 
   .sparkle {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: radial-gradient(circle, #fff 0%, transparent 70%);
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, #fff 0%, #ffd700 50%, transparent 80%);
     border-radius: 50%;
     box-shadow:
-      0 0 6px 2px rgba(255, 255, 255, 0.8),
-      0 0 12px 4px rgba(139, 0, 0, 0.4);
+      0 0 10px 3px rgba(255, 255, 255, 1),
+      0 0 20px 6px rgba(255, 215, 0, 0.8),
+      0 0 30px 8px rgba(139, 0, 0, 0.6);
     animation: sparkleFloat 3s ease-in-out infinite;
     opacity: 0;
   }

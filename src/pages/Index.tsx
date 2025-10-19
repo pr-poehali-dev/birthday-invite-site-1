@@ -101,7 +101,7 @@ const Index = () => {
             </p>
             <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
             <p className="text-lg text-foreground mb-8">
-              Дата уточняется • 14:00
+              2 ноября • 14:00
             </p>
             
             <div className="grid grid-cols-4 gap-4 max-w-xl mx-auto">
@@ -202,18 +202,39 @@ const Index = () => {
               <div className="mb-6">
                 <Icon name="Sparkles" size={48} className="mx-auto text-primary mb-4" />
               </div>
-              <h3 className="text-3xl font-medium mb-6">Комфортный стиль</h3>
+              <h3 className="text-3xl font-medium mb-6">Элегантный стиль</h3>
               <div className="text-left max-w-2xl mx-auto space-y-4">
                 <p className="text-lg text-muted-foreground">
                   <Icon name="Heart" size={20} className="text-primary inline mr-2" />
-                  Приходите в том, в чем будет комфортно!
+                  Приходите в своих лучших нарядах!
                 </p>
                 <p className="text-muted-foreground">
-                  <strong>Важно:</strong> Удобная одежда, кроссовки или балетки — каблуки и платья оставьте дома. Будем двигаться, танцевать и веселиться!
+                  <strong>Рекомендуем:</strong> Корсеты, шелковые платья, атласные рубашки, элегантные костюмы. Блестящие аксессуары приветствуются!
                 </p>
                 <p className="text-muted-foreground">
                   Примеры: джинсы, брюки, удобные топы, свитера, кроссовки, кеды, балетки
                 </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section id="guests" className="py-20 px-4 bg-secondary/20">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-light text-center mb-12 text-primary">
+            Список гостей
+          </h2>
+          
+          <Card className="border-none shadow-lg mb-16">
+            <CardContent className="p-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
+                {['Владимир', 'Александр', 'Дарья', 'Арина', 'Алёна'].map((guest, index) => (
+                  <div key={index} className="flex items-center justify-center gap-3 p-4 bg-background rounded-lg">
+                    <Icon name="User" size={24} className="text-primary" />
+                    <span className="text-xl font-medium">{guest}</span>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
