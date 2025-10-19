@@ -81,24 +81,37 @@ const Index = () => {
             Место проведения
           </h2>
           
-          <Card className="border-none shadow-lg">
-            <CardContent className="p-12">
-              <div className="mb-6">
-                <Icon name="MapPin" size={48} className="mx-auto text-primary mb-4" />
+          <Card className="border-none shadow-lg overflow-hidden">
+            <CardContent className="p-0">
+              <div className="relative h-[300px] md:h-[400px] bg-muted">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?ll=39.902222%2C54.696667&z=15&l=map&pt=39.902222,54.696667,pm2rdm"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allowFullScreen
+                  className="absolute inset-0"
+                  title="Карта санатория Солотча"
+                />
               </div>
-              <h3 className="text-3xl font-medium mb-4">Санаторий Солотча</h3>
-              <p className="text-lg text-muted-foreground mb-6">
-                Корпус 9<br />
-                Солотча, Рязанская область
-              </p>
-              <Button 
-                variant="outline" 
-                className="gap-2"
-                onClick={() => window.open('https://maps.google.com', '_blank')}
-              >
-                <Icon name="Navigation" size={18} />
-                Открыть на карте
-              </Button>
+              <div className="p-8 md:p-12">
+                <div className="mb-6">
+                  <Icon name="MapPin" size={48} className="mx-auto text-primary mb-4" />
+                </div>
+                <h3 className="text-3xl font-medium mb-4">Санаторий Солотча</h3>
+                <p className="text-lg text-muted-foreground mb-6">
+                  Корпус 9<br />
+                  Солотча, Рязанская область
+                </p>
+                <Button 
+                  variant="outline" 
+                  className="gap-2"
+                  onClick={() => window.open('https://yandex.ru/maps/?ll=39.902222%2C54.696667&z=15&l=map&pt=39.902222,54.696667,pm2rdm', '_blank')}
+                >
+                  <Icon name="Navigation" size={18} />
+                  Открыть на карте
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>
