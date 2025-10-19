@@ -24,7 +24,7 @@ const Index = () => {
       <section className="min-h-screen flex items-center justify-center px-4 py-16">
         <div className="max-w-4xl w-full text-center animate-fade-in">
           <div className="mb-8">
-            <div className="text-6xl mb-6">🎂</div>
+            <div className="text-6xl mb-6">🎉</div>
             <h1 className="text-6xl md:text-8xl font-light mb-6 text-primary">
               День рождения Елизаветы
             </h1>
