@@ -73,8 +73,8 @@ const Index = () => {
             className="sparkle"
             style={{
               left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${5 + Math.random() * 3}s`
             }}
           />
         ))}
@@ -285,18 +285,6 @@ const Index = () => {
                     value={formData.guests}
                     onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
                     className="text-lg"
-                  />
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium mb-2">
-                    Сообщение (опционально)
-                  </label>
-                  <Textarea
-                    placeholder="Особые пожелания или диетические ограничения"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="min-h-[100px] text-lg"
                   />
                 </div>
                 
