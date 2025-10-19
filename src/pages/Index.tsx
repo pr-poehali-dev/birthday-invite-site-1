@@ -33,7 +33,7 @@ const Index = () => {
             </p>
             <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
             <p className="text-lg text-foreground">
-              Дата уточняется • 18:00
+              Дата уточняется • 14:00
             </p>
           </div>
         </div>
@@ -47,11 +47,11 @@ const Index = () => {
           
           <div className="space-y-8">
             {[
-              { time: '18:00', title: 'Встреча гостей', desc: 'Регистрация и приветственный фуршет' },
-              { time: '18:30', title: 'Игры', desc: 'Весёлые игры и конкурсы для всех гостей' },
-              { time: '20:00', title: 'Фуршет', desc: 'Угощения и праздничный торт' },
-              { time: '21:00', title: 'Танцы', desc: 'Танцевальная программа и музыка' },
-              { time: '22:30', title: 'Фотосессия', desc: 'Совместные фото на память' }
+              { time: '14:00', title: 'Встреча гостей', desc: 'Регистрация и приветствие' },
+              { time: '15:00', title: 'Фуршет', desc: 'Угощения и праздничный торт' },
+              { time: '18:00', title: 'Игры', desc: 'Весёлые игры и конкурсы для всех гостей' },
+              { time: '19:30', title: 'Танцы', desc: 'Танцевальная программа и музыка' },
+              { time: '21:00', title: 'Фотосессия', desc: 'Совместные фото на память' }
             ].map((item, index) => (
               <Card 
                 key={index}
@@ -195,7 +195,35 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="py-12 px-4 text-center border-t">
+      <section id="gallery" className="py-20 px-4 bg-accent/10">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-light text-center mb-12 text-primary">
+            Галерея
+          </h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[1, 2, 3, 4, 5, 6].map((item) => (
+              <Card 
+                key={item}
+                className="border-none shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer animate-scale-in"
+                style={{ animationDelay: `${item * 50}ms` }}
+              >
+                <CardContent className="p-0 aspect-square bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 flex items-center justify-center">
+                  <div className="text-6xl group-hover:scale-110 transition-transform duration-300">
+                    {['🎂', '🎈', '🎉', '🎊', '🌟', '💝'][item - 1]}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          
+          <p className="text-center text-muted-foreground mt-8">
+            Здесь будут размещены фотографии с празднования
+          </p>
+        </div>
+      </section>
+
+      <footer className="py-12 px-4 text-center border-t bg-background">
         <div className="max-w-4xl mx-auto">
           <p className="text-muted-foreground mb-4">
             С нетерпением ждём встречи с вами!
