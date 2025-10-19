@@ -210,14 +210,16 @@ const Index = () => {
               <div className="mb-6">
                 <Icon name="Sparkles" size={48} className="mx-auto text-primary mb-4" />
               </div>
-              <h3 className="text-3xl font-medium mb-6">Элегантный стиль</h3>
+              <h3 className="text-3xl font-medium mb-6">Комфортный стиль</h3>
               <div className="text-left max-w-2xl mx-auto space-y-4">
                 <p className="text-lg text-muted-foreground">
                   <Icon name="Heart" size={20} className="text-primary inline mr-2" />
-                  Приходите в своих лучших нарядах!
+                  Цветовая гамма: бордовый и чёрный
                 </p>
                 <p className="text-muted-foreground">
-                  <strong>Рекомендуем:</strong> Корсеты, шелковые платья, атласные рубашки, элегантные костюмы. Блестящие аксессуары приветствуются!
+                  <strong>Рекомендуем:</strong> Удобные брюки, джинсы, топы, свитера, рубашки, кроссовки, кеды или балетки. Всё, в чём будет комфортно танцевать и веселиться!</p>
+                <p className="text-muted-foreground">
+                  <strong>Не рекомендуем:</strong> Платья и каблуки — оставьте их дома. Будем активно двигаться!
                 </p>
                 <p className="text-muted-foreground">
                   Примеры: джинсы, брюки, удобные топы, свитера, кроссовки, кеды, балетки
