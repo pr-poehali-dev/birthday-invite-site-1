@@ -67,7 +67,7 @@ const Index = () => {
       </audio>
       
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        {[...Array(20)].map((_, i) => (
+        {[...Array(50)].map((_, i) => (
           <div
             key={i}
             className="sparkle"
@@ -90,17 +90,12 @@ const Index = () => {
       <section className="min-h-screen flex items-center justify-center px-4 py-16">
         <div className="max-w-4xl w-full text-center animate-fade-in">
           <div className="mb-8">
-            <div className="text-6xl mb-6 flex justify-center gap-4">
-              <span>🖤</span>
-              <span className="text-primary">❤️</span>
-              <span>🖤</span>
+            <div className="text-6xl mb-6">
+              🎉
             </div>
             <h1 className="text-6xl md:text-8xl font-light mb-6 text-primary">
               HAPPY BIRTHDAY
             </h1>
-            <p className="text-4xl md:text-5xl font-light mb-6 text-foreground">
-              Елизавета
-            </p>
             <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8">
               Празднуем 19 лет!
             </p>
