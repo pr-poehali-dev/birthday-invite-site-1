@@ -24,16 +24,16 @@ const Index = () => {
       <section className="min-h-screen flex items-center justify-center px-4 py-16">
         <div className="max-w-4xl w-full text-center animate-fade-in">
           <div className="mb-8">
-            <div className="text-6xl mb-6">✨</div>
+            <div className="text-6xl mb-6">🎂</div>
             <h1 className="text-6xl md:text-8xl font-light mb-6 text-primary">
-              Вечеринка Эпохи
+              День рождения Елизаветы
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-light mb-8">
-              Приглашаем вас в путешествие во времени
+              Празднуем 19 лет!
             </p>
             <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
             <p className="text-lg text-foreground">
-              15 ноября 2025 • 19:00
+              Дата уточняется • 18:00
             </p>
           </div>
         </div>
@@ -47,11 +47,11 @@ const Index = () => {
           
           <div className="space-y-8">
             {[
-              { time: '19:00', title: 'Встреча гостей', desc: 'Приветственный коктейль и фотозона' },
-              { time: '20:00', title: 'Открытие вечера', desc: 'Торжественная речь и тост' },
-              { time: '20:30', title: 'Ужин', desc: 'Изысканное меню эпохи' },
-              { time: '21:30', title: 'Развлекательная программа', desc: 'Живая музыка и танцы' },
-              { time: '23:00', title: 'Сюрприз вечера', desc: 'Особенный момент празднования' }
+              { time: '18:00', title: 'Встреча гостей', desc: 'Регистрация и приветственный фуршет' },
+              { time: '18:30', title: 'Игры', desc: 'Весёлые игры и конкурсы для всех гостей' },
+              { time: '20:00', title: 'Фуршет', desc: 'Угощения и праздничный торт' },
+              { time: '21:00', title: 'Танцы', desc: 'Танцевальная программа и музыка' },
+              { time: '22:30', title: 'Фотосессия', desc: 'Совместные фото на память' }
             ].map((item, index) => (
               <Card 
                 key={index}
@@ -86,10 +86,10 @@ const Index = () => {
               <div className="mb-6">
                 <Icon name="MapPin" size={48} className="mx-auto text-primary mb-4" />
               </div>
-              <h3 className="text-3xl font-medium mb-4">Особняк "Эпоха"</h3>
+              <h3 className="text-3xl font-medium mb-4">Санаторий Солотча</h3>
               <p className="text-lg text-muted-foreground mb-6">
-                ул. Тверская, 15<br />
-                Москва, Россия
+                Корпус 9<br />
+                Солотча, Рязанская область
               </p>
               <Button 
                 variant="outline" 
@@ -115,26 +115,18 @@ const Index = () => {
               <div className="mb-6">
                 <Icon name="Sparkles" size={48} className="mx-auto text-primary mb-4" />
               </div>
-              <h3 className="text-3xl font-medium mb-6">Элегантность выбранной эпохи</h3>
-              <div className="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
-                <div>
-                  <h4 className="text-xl font-medium mb-3 flex items-center gap-2">
-                    <Icon name="User" size={20} className="text-primary" />
-                    Для дам
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Вечерние платья в стиле выбранной эпохи, элегантные аксессуары, винтажные украшения
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-xl font-medium mb-3 flex items-center gap-2">
-                    <Icon name="UserCircle" size={20} className="text-primary" />
-                    Для кавалеров
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Классические костюмы, смокинги или исторические наряды соответствующего периода
-                  </p>
-                </div>
+              <h3 className="text-3xl font-medium mb-6">Комфортный стиль</h3>
+              <div className="text-left max-w-2xl mx-auto space-y-4">
+                <p className="text-lg text-muted-foreground">
+                  <Icon name="Heart" size={20} className="text-primary inline mr-2" />
+                  Приходите в том, в чем будет комфортно!
+                </p>
+                <p className="text-muted-foreground">
+                  <strong>Важно:</strong> Удобная одежда, кроссовки или балетки — каблуки и платья оставьте дома. Будем двигаться, танцевать и веселиться!
+                </p>
+                <p className="text-muted-foreground">
+                  Примеры: джинсы, брюки, удобные топы, свитера, кроссовки, кеды, балетки
+                </p>
               </div>
             </CardContent>
           </Card>
@@ -196,7 +188,7 @@ const Index = () => {
               </form>
               
               <p className="text-center text-sm text-muted-foreground mt-6">
-                Просьба подтвердить участие до 1 ноября
+                Просьба подтвердить участие заранее
               </p>
             </CardContent>
           </Card>
